@@ -1,8 +1,5 @@
 pipeline {
-    agent {  docker {
-            image 'alihamza9/myjenkins-agent-python:latest'
-            args '-u root'
-        } }
+    agent  any
 
     stages {
         stage('Test') {
