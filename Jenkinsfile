@@ -1,6 +1,6 @@
 pipeline {
     agent {  docker {
-            image 'myjenkins-agent-python'
+            image 'alihamza9/myjenkins-agent-python:latest'
             args '-u root'
         } }
 
