@@ -8,7 +8,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running basic syntax check...'
-                sh 'python3 -m py_comile app.py'
+                sh 'python3 -m py_compile app.py'
             }
         }
         stage('Build') {
