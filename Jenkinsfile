@@ -1,5 +1,8 @@
 pipeline {
-    agent { label 'docker-agent' }
+    agent {  docker {
+            image 'myjenkins-agent-python'
+            args '-u root'
+        } }
 
     stages {
         stage('Test') {
