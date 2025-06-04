@@ -1,6 +1,7 @@
 pipeline {
     agent  {
-        label 'universal'
+        image 'roemer/universal-jenkins-agent:latest'
+        args '-v /var/run/docker.sock:/var/run/docker.sock'
     }
 
     stages {
