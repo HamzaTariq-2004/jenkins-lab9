@@ -1,7 +1,9 @@
 pipeline {
-    agent  {
-        image 'roemer/universal-jenkins-agent:latest'
-        args '-v /var/run/docker.sock:/var/run/docker.sock'
+    agent {
+        docker {
+            image 'roemer/universal-jenkins-agent:latest'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
     }
 
     stages {
@@ -19,8 +21,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-            echo 'Running Docker container...'
-            sh 'docker run --rm hamza/test-pipeline-app'
+                echo 'Running Docker container...'
+                sh 'docker run --rm hamza/test-pipeline-app'
             }
         }
     }
