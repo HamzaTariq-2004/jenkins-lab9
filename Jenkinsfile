@@ -6,6 +6,10 @@ pipeline {
         }
     }
 
+    environment {
+        HOME = '/home/jenkins'  // or any writeable directory
+    }
+
     stages {
         stage('Test') {
             steps {
